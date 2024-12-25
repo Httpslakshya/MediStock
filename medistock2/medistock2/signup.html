@@ -1,0 +1,182 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Login Account
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            height: 566px;
+            max-width: 900px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .image-section {
+            flex: 1;
+            display: none;
+        }
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .form-section {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-section h1 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .form-section p {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .form-section form {
+            width: 100%;
+        }
+        .form-section form .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .form-section form .input-group input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .form-section form .input-group i {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            color: #999;
+        }
+        .form-section form .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .form-section form .checkbox-group input {
+            margin-right: 10px;
+        }
+        .form-section form .checkbox-group label {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .form-section form .checkbox-group a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .form-section form .checkbox-group a:hover {
+            text-decoration: underline;
+        }
+        .form-section form button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .form-section form button:hover {
+            background-color: #0056b3;
+        }
+        .form-section .login-link {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .form-section .login-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .form-section .login-link a:hover {
+            text-decoration: underline;
+        }
+        @media (min-width: 768px) {
+            .image-section {
+                display: block;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+    <div class="image-section">
+        <img alt="Green plants on a light background" height="600" src="https://storage.googleapis.com/a1aa/image/lDo9gucqH4pcDZlLzKf5KbgDCqofyWAteD8qfrsvDIDDSI0PB.jpg" width="450"/>
+       </div>
+   <div class="form-section">
+    <h1>
+     Create Account
+    </h1>
+    <p>
+     Create your account to manage your medicine inventory.
+    </p>
+    <form>
+     <div class="input-group">
+      <i class="fas fa-user">
+      </i>
+      <input placeholder="Enter your full name" type="text"/>
+     </div>
+     <div class="input-group">
+      <i class="fas fa-envelope">
+      </i>
+      <input placeholder="Your email address" type="email"/>
+     </div>
+     <div class="input-group">
+      <i class="fas fa-lock">
+      </i>
+      <input placeholder="Create a password" type="password"/>
+     </div>
+     <div class="checkbox-group">
+      <input id="terms" type="checkbox"/>
+      <label for="terms">
+       I agree with
+       <a href="#">
+        Terms &amp; Conditions
+       </a>
+      </label>
+     </div>
+     <button type="submit">
+      Sign Up
+     </button>
+    </form>
+    <div class="login-link">
+     Already registered?
+     <a href="#">
+      Log In
+     </a>
+    </div>
+   </div>
+        
+
+  </div>
+ </body>
+</html>

@@ -1,0 +1,211 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    
+}
+header .logo {
+    display: flex;
+    align-items: center;
+}
+header .logo img {
+    height: 30px;
+    margin-right: 10px;
+}
+header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+header .auth-buttons a {
+    margin-left: 15px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+}
+header .auth-buttons .login {
+    border: 1px solid #007bff;
+    color: #007bff;
+}
+header .auth-buttons .signup {
+    background-color: #007bff;
+    color: #fff;
+}
+header nav a.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #f8f9fa;
+}
+.hero img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+.hero h1 {
+    font-size: 48px;
+    margin: 20px 0;
+}
+.hero p {
+    font-size: 18px;
+    color: #666;
+}
+.hero .btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+header .user-actions {
+    display: flex;
+    align-items: center;
+}
+header .user-actions i {
+    margin: 0 10px;
+    cursor: pointer;
+}
+header .user-actions img {
+    height: 30px;
+    border-radius: 50%;
+}
+.features {
+    padding: 60px 20px;
+    text-align: center;
+}
+.features h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.features p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+}
+.feature-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.feature-item img {
+    width: 45%;
+    border-radius: 10px;
+}
+.feature-item .content {
+    width: 45%;
+    text-align: left;
+}
+.feature-item .content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.feature-item .content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+.feature-item .content .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+.testimonials {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+.testimonials h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+.testimonial-item {
+    display: inline-block;
+    width: 30%;
+    margin: 0 1.5%;
+    text-align: left;
+}
+.testimonial-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.testimonial-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.testimonial-item p {
+    font-size: 16px;
+    color: #666;
+}
+.footer {
+    padding: 40px 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+.footer .newsletter {
+    margin-bottom: 20px;
+}
+.footer .newsletter input {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.footer .newsletter button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.footer .links a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+}
+.footer .social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 20px;
+}
+.footer .copyright {
+    margin-top: 20px;
+    font-size: 14px;
+}
+@media (max-width: 768px) {
+    .feature-item {
+        flex-direction: column;
+    }
+    .feature-item img, .feature-item .content {
+        width: 100%;
+    }
+    .testimonial-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

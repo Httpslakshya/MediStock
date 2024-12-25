@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicine Information</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f7f6;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header .logo img {
+      height: 50px;
+      width: auto;
+    }
+
+    header h1 {
+      font-size: 24px;
+      color: black;
+      margin-bottom: 10px;
+    }
+
+    header nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    header nav a.active {
+      color: #007bff;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 5px;
+    }
+
+    header .user-actions {
+      display: flex;
+      align-items: center;
+    }
+
+    header .user-actions img {
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0062cc;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+      transition: border 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+      border-color: #0062cc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #0062cc;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #004a99;
+    }
+
+    .result, .common-uses, .error {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #e8f5e9;
+      border: 1px solid #c8e6c9;
+      border-radius: 5px;
+    }
+
+    .result h3, .common-uses h4 {
+      color: #333;
+    }
+
+    .error {
+      background-color: #ffebee;
+      border-color: #ffcccc;
+      color: #e57373;
+      display: none;
+      text-align: center;
+    }
+  #icon{
+    margin: 10px;
+  }
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      .container {
+        margin: 15px;
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      button {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img alt="MediStock logo" height="70" src="/medistock2/logo.png" width="40"/>
+      <h1>MediStock</h1>
+    </div>
+    <nav>
+      <a href="/medistock2/medihome.html">Dashboard</a>
+      <a href="/medistock2/dashboared.html">Medicines</a>
+      <a href="/medistock2/suggest.html">Recommendations</a>
+      <a href="/information.html" class="active">Search Medicine</a>
+    </nav>
+    <div class="user-actions">
+      <i class="fas fa-cog" id="icon"></i>
+      <i class="fas fa-bell" id="icon"></i>
+      <img 
+        alt="User profile picture" 
+        height="30" 
+        src="https://storage.googleapis.com/a1aa/image/FPu6lEZevSUuFqCKW3sKg3xuvYPzsb18ug6cNXNblhNLDC9JA.jpg" 
+        width="30"
+      />
+    </div>
+  </header>
+  
+  <div class="container">
+    <h1>Medicine Information</h1>
+    <form id="medicineForm">
+      <label for="medicineName">Enter Medicine Name:</label>
+      <input type="text" id="medicineName" placeholder="e.g., Paracetamol" required>
+      <button type="submit">Get Information</button>
+    </form>
+    <div class="result" id="result"></div>
+    <div class="error" id="error" style="display: none;"></div>
+  </div>
+  
+  <script src="information.js"></script>
+</body>
+</html>

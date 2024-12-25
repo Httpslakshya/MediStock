@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediTrack</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="dash.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img alt="MediTrack logo" height="70" src="logo.png" width="40"/>
+            <h1>MediStock</h1>
+        </div>
+        <nav>
+            <a href="medihome.html">Dashboard</a>
+           
+
+            <a class="active" href="dashboared.html">Medicines</a>
+            <a href="suggest.html">Recommendations</a>
+            <a href="/information.html">Search medicine</a>
+        </nav>
+        <div class="user-actions">
+            <i class="fas fa-cog"></i>
+            <i class="fas fa-bell"></i>
+            <img alt="User profile picture" height="30" src="https://storage.googleapis.com/a1aa/image/FPu6lEZevSUuFqCKW3sKg3xuvYPzsb18ug6cNXNblhNLDC9JA.jpg" width="30"/>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Add Medicine Button -->
+        <div class="add-medicine-btn" id="show-add-medicine-form">
+            <div class="plus-circle">
+                <i class="fas fa-plus"></i>
+            </div>
+            <!-- <p class="add-medicine-text">Add Medicine</p> Add this line for the text -->
+</div>
+        </div>
+
+        <div id="add-medicine-form" class="hidden">
+            <form id="medicine-form">
+                <label for="medicine-name">Medicine Name:</label>
+                <input type="text" id="medicine-name" placeholder="Enter medicine name" required>
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="date" id="expiry-date" required>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" placeholder="Enter quantity" required>
+                <button type="submit">Add Medicine</button>
+            </form>
+        </div>
+
+        <section id="medicine-container">
+            <!-- Medicines will be displayed dynamically here -->
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

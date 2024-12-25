@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediHome - Medicine Inventory</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+       body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('loginback.png') no-repeat center center fixed; /* Set the background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+}
+
+.container {
+    width: 400px;
+    perspective: 1000px;
+    position: relative;
+    z-index: 1; /* Ensure the card is above the background */
+}
+
+.card {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    z-index: 2; /* Card on top of the blurred background */
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.form-section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 2; /* Ensure the form is above the background */
+}
+
+/* Apply blur effect to the background */
+body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('loginback.png') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(8px); /* Set the blur effect */
+    z-index: 0; /* Ensure the blurred background is behind everything */
+}
+
+.form-section h1 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.form-section p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-section form {
+    width: 100%;
+}
+
+.form-section form .input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-section form .input-group input {
+    width: 80%;
+    padding: 15px 20px 15px 50px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-section form .input-group i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.form-section form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.form-section form button:hover {
+    background-color: #0056b3;
+}
+
+.form-section .login-link {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.form-section .login-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-section .login-link a:hover {
+    text-decoration: underline;
+}
+
+.form-section.back {
+    transform: rotateY(180deg);
+}
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="card">
+            <!-- Signup Form -->
+            <div class="form-section front">
+                <h1>Create Account</h1>
+                <p>Create your account to manage your medicine inventory.</p>
+                <form id="signup-form">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input id="signup-name" placeholder="Enter your full name" type="text" />
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input id="signup-email" placeholder="Your email address" type="email" />
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input id="signup-password" placeholder="Create a password" type="password" />
+                    </div>
+                    <button type="button" id="signup-btn">Sign Up</button>
+                </form>
+                <div class="login-link">
+                    Already registered? <a href="#" id="to-login">Log In</a>
+                </div>
+            </div>
+
+            <!-- Login Form -->
+            <div class="form-section back">
+                <h1>Login Your Account</h1>
+                <p>Login to your account to manage your medicine inventory.</p>
+                <form id="login-form">
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input id="login-email" placeholder="Enter your email address" type="email" />
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input id="login-password" placeholder="Enter your password" type="password" />
+                    </div>
+                    <button type="button" id="login-btn">Sign In</button>
+                </form>
+                <div class="login-link">
+                    Create New Account <a href="#" id="to-signup">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const card = document.querySelector('.card');
+        const toLogin = document.getElementById('to-login');
+        const toSignup = document.getElementById('to-signup');
+        const signupBtn = document.getElementById('signup-btn');
+        const loginBtn = document.getElementById('login-btn');
+
+        // Switch to Login form
+        toLogin.addEventListener('click', () => card.classList.add('flip'));
+        // Switch to Signup form
+        toSignup.addEventListener('click', () => card.classList.remove('flip'));
+
+        // Handle Signup
+        signupBtn.addEventListener('click', () => {
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+
+            if (name && email && password) {
+                localStorage.setItem('userName', name);
+                localStorage.setItem('userEmail', email);
+                localStorage.setItem('userPassword', password);
+                alert('Account created successfully! Please log in.');
+                card.classList.add('flip');
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+
+        // Handle Login
+        loginBtn.addEventListener('click', () => {
+            const loginEmail = document.getElementById('login-email').value;
+            const loginPassword = document.getElementById('login-password').value;
+
+            const storedEmail = localStorage.getItem('userEmail');
+            const storedPassword = localStorage.getItem('userPassword');
+
+            if (loginEmail === storedEmail && loginPassword === storedPassword) {
+                alert('Login successful!');
+                window.location.href = 'medihome.html'; // Redirect to recommendation page
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
